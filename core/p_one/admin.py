@@ -15,6 +15,7 @@ class AmelScoreInline(admin.TabularInline):
 @admin.register(avamel)
 class avamel_admin(admin.ModelAdmin):
     list_display = ['model_head', 'amel_name']
+    list_filter  = ['model_head',]
     inlines = [AmelScoreInline]
 
 
@@ -23,3 +24,4 @@ class amel_score_admin(admin.ModelAdmin):
     list_display = ['amel', 'complexity', 'frequency', 'score']
     list_filter = ['amel']
     list_editable = ['complexity', 'frequency', 'score']
+    list_filter = ['amel','complexity','frequency']

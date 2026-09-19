@@ -5,8 +5,9 @@ description = ""
 authors = ["ali-talebi"]
 
 [tool.poetry.dependencies]
-python = "3.12"
+python = ">=3.12,<4.0"
 Django = "^6.1.1"
+djangorestframework = "^3.18.1"
 
 [tool.poetry.dev-dependencies]
 

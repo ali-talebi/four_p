@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'p_one.apps.POneConfig',
+
+
+    ### third apps ### 
+    'rest_framework',
+    
 ]
 
 MIDDLEWARE = [
