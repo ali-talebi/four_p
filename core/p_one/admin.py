@@ -4,7 +4,7 @@ from .models import p1_methods, avamel, amel_score
 
 @admin.register(p1_methods)
 class p1_methods_admin(admin.ModelAdmin):
-    list_display = ['method_name']
+    list_display = ['method_name','score']
 
 
 class AmelScoreInline(admin.TabularInline):
@@ -14,7 +14,7 @@ class AmelScoreInline(admin.TabularInline):
 
 @admin.register(avamel)
 class avamel_admin(admin.ModelAdmin):
-    list_display = ['model_head', 'amel_name']
+    list_display = ['model_head', 'amel_name','self_score','relation_percent']
     list_filter  = ['model_head',]
     inlines = [AmelScoreInline]
 
