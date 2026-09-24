@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-h%42#nff7_%ofgb5uf@g%gf3a5l(_3i)&u_(il^lcwst)87-e2
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+USE_DJANGO_JQUERY = True
 
 
 # Application definition
@@ -42,6 +43,9 @@ INSTALLED_APPS = [
 
     ### third apps ### 
     'rest_framework',
+
+    ### select Form Chain ### 
+    "smart_selects",
     
 ]
 

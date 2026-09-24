@@ -38,6 +38,21 @@ argon2 = ["argon2-cffi (>=23.1.0)"]
 bcrypt = ["bcrypt (>=4.1.1)"]
 
 [[package]]
+name = "django-smart-selects"
+version = "1.7.2"
+description = "Django application to handle chained model fields."
+optional = false
+python-versions = ">=3.8"
+groups = ["main"]
+files = [
+    {file = "django_smart_selects-1.7.2-py3-none-any.whl", hash = "sha256:08c774d96285e6d169043cd548860d74d085be8d349c42437232c42bc43cd79a"},
+    {file = "django_smart_selects-1.7.2.tar.gz", hash = "sha256:c8116718ecf2d0d0fd4cd1e52c26d2dcc586e25319aa65af7af2d51a1012df3a"},
+]
+
+[package.dependencies]
+django = ">=3.2"
+
+[[package]]
 name = "djangorestframework"
 version = "3.18.1"
 description = "Web APIs for Django, made easy."
@@ -84,4 +99,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12,<4.0"
-content-hash = "39dfbeeec4b0cc3db9a8af1a9ef72149fb9ec1b297bbd45f41377fb114cf1287"
+content-hash = "3609273b8c419d538ced73f527260981e53601dd9929a6caa9976ba143699897"

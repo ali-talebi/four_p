@@ -20,4 +20,5 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('p1/',include('p_one.urls')),
+    path("chaining/", include("smart_selects.urls")),
 ]
