@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'p_one.apps.POneConfig',
+    'person_grade.apps.PersonGradeConfig',
 
 
     ### third apps ### 
