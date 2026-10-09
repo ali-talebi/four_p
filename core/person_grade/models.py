@@ -19,8 +19,6 @@ class Person(models.Model):
         verbose_name_plural = "افراد"
 
 
-
-
 class person_grade_p_one(models.Model):
     human = models.OneToOneField(
         Person,
@@ -46,7 +44,15 @@ class person_grade_p_one(models.Model):
         for factor in total_factor_selection:
             sum += factor.get_score()
 
-        return sum 
+        return sum
+
+    def get_grading_arzi(self):
+        total_grading_arzi = Score_Grading_Arzi.objects.all()
+        for grading_arzi in total_grading_arzi:
+            if self.get_total_scores() <= grading_arzi.__dict__['max_score'] and self.get_total_scores() >= grading_arzi.__dict__['min_score'] :
+                return grading_arzi.__dict__['masir_shoghli'],grading_arzi.__dict__['grade_shoghli']
+        else:
+            return 0,0
             
     class Meta:
         db_table = "person_grade_p_one_table"
@@ -128,5 +134,21 @@ class PersonFactorSelection(models.Model):
         verbose_name_plural = "امتیاز دهی به عوامل"
 
 
+class Score_Grading_Arzi(models.Model):
+
+    masir_shoghli = models.PositiveSmallIntegerField(verbose_name="مسیر شغلی")
+    grade_shoghli = models.PositiveSmallIntegerField(verbose_name="گرید شغلی")
+    min_score = models.PositiveSmallIntegerField(verbose_name="min")
+    mid_score = models.PositiveSmallIntegerField(verbose_name="mid")
+    max_score = models.PositiveSmallIntegerField(verbose_name="max")
+
+
+    def __str__(self):
+        return f'{self.masir_shoghli}-{self.grade_shoghli}'
+
+    class Meta:
+        db_table = "grade_arzi_table"
+        verbose_name_plural = "امتیازات گردینگ عرضی"
+    
 
 
