@@ -10,13 +10,13 @@ class p1_method_serializer(serializers.ModelSerializer):
 
 
 class avamel_serializer(serializers.ModelSerializer):
-    model_head = serializers.StringRelatedField()
+    model_head = serializers.StringRelatedField(read_only=True)
     class Meta:
         model = avamel
         fields = "__all__"
 
 
-class p1_method_with_avamels_serializer(serializers.ModelSerializer):
+class p1_method_detail_serializer(serializers.ModelSerializer):
 
     # avamels = avamel_serializer(many=True,read_only=True)
     avamels = serializers.SerializerMethodField()
